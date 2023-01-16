@@ -1,0 +1,180 @@
+/******** BARRA HEADER ********/
+.header {
+    background-color: rgb(151, 122, 178);
+  }
+  
+  .header .header-container {
+    display: flex;
+    padding: 20px 30px;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 75px;
+  }
+  
+  .header h1 {
+    font-size: 40px;
+    font-weight: 700;
+    transition: 0.3s;
+  }
+  
+  .header a:hover h1 {
+    /* Quando passar o botão na tag a, irá fazer algo no h1 */
+    color: coral;
+  
+  }
+  
+  /******** MENU LINKS ********/
+  .header nav ul {
+    display: flex;
+  }
+  
+  .header nav ul li a {
+    font-weight: 500;
+    padding: 10px 30px;
+    border-radius: 35px;
+    transition: 0.3s ease-in-out;
+    margin-right: 10px;
+  }
+  
+  .header nav ul li a:hover {
+    color: #fff;
+    background-color: coral;
+  
+  }
+  
+  .header nav {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header nav button {
+    font-size: 20px;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+  
+  .header nav button:hover {
+    color: #fff;
+    background-color: coral;
+  }
+  
+  /******** MENU HAMBURGUER *******/
+  .header input {
+    display: none;
+  }
+  
+  .header .menu {
+    display: none;
+    width: 65px;
+    height: 60px;
+  }
+  
+  .header .hamburguer {
+    background-color: #000;
+      position: relative;
+      display: block;
+      width: 30px;
+      height: 2px;
+      top: 25px;
+      left: 15px;
+      transition: 0.5s ease-in-out;
+  }
+  
+  .header .hamburguer:before,
+  .header .hamburguer:after {
+    background-color: rgb(27, 23, 23);
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: " ";
+    transition: 0.7s ease-in-out;
+  }
+  
+  .header .hamburguer:before {
+    top: -9px;
+  }
+  
+  .header .hamburguer:after {
+    bottom: -9px;
+  }
+  
+  /******** ANIMAÇÃO MENU HAMBURGUER ********/
+  .header input:checked ~label .hamburguer {
+    transform: rotate(45deg);
+  }
+  .header input:checked ~label .hamburguer:before {
+    transform: rotate(90deg);
+    top: 0;
+  }
+  .header input:checked ~label .hamburguer:after {
+    transform: rotate(90deg);
+    bottom: 0;
+  }
+  
+  /******** MEDIA QUERIES ********/
+  @media (max-width: 900px) {
+    .header .menu {
+      display: block;
+    }
+  
+    .header nav label {
+      display: flex;
+      align-self: flex-end;
+    }
+  
+    .header nav ul{
+      display: none;
+    }
+  
+    .header nav button{
+      display: none;
+    }
+  
+    /* APARECER MENU */
+    .header input:checked ~ ul {
+      display: block;
+    }
+  
+    .header input:checked ~ button {
+      display: block;
+    }
+  
+    .header nav {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 20px;
+      right: 15px;
+      z-index: 1;
+      background-color: rgb(151, 122, 178);
+      
+    }
+  
+    .header nav ul  {
+      width: 220px;
+      padding: 20px;
+    }
+  
+    .header nav ul a {
+      display: block;
+      text-align: center;
+      padding: 20px;
+    }
+  
+    .header nav button {
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media (max-width: 420px) {
+    .header nav {
+      opacity: 0.9;
+      background-color: rgb(151, 122, 178);
+      width: 100%;
+      right: 0;
+    }
+  }
+  
